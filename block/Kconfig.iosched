@@ -45,8 +45,9 @@ config IOSCHED_BFQ
 	---help---
 	  The BFQ I/O scheduler tries to distribute bandwidth among
 	  all processes according to their weights.
-	  It aims at distributing the bandwidth as desired, regardless
-	  of the disk parameters and with any workload. If compiled
+	  It aims at distributing the bandwidth as desired, independently of
+	  the disk parameters and with any workload. It also tries to
+	  guarantee a low latency to interactive applications. If compiled
 	  built-in (saying Y here), BFQ can be configured to support
 	  hierarchical scheduling.
 
@@ -77,7 +78,8 @@ choice
 		  used by default for all block devices.
 		  The BFQ I/O scheduler aims at distributing the bandwidth
 		  as desired, independently of the disk parameters and with
-		  any workload.
+		  any workload. It also tries to guarantee low latency to
+		  interactive applications.
 
 	config DEFAULT_NOOP
 		bool "No-op"
